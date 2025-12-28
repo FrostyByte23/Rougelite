@@ -18,7 +18,8 @@ Player = Class{
         self.regen_rate = 20
         self.regen_delay = 1
         self.regen_timer = 0
-
+        -- utilities
+        self.direction = 'left'
     end;
     move = function (self, direction)
         self.is_moving = true

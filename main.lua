@@ -12,15 +12,19 @@ function love.update(dt)
     -- Movement
     if love.keyboard.isDown("up") then
         player:move("up")
+        player.direction = ("up")
     end
     if love.keyboard.isDown("down") then
         player:move("down")
+        player.direction = ("down")
     end
     if love.keyboard.isDown("left") then
         player:move("left")
+        player.direction = ("left")
     end
     if love.keyboard.isDown("right") then
         player:move("right")
+        player.direction = ("right")
     end
 
 
