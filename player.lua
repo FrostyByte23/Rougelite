@@ -20,18 +20,25 @@ Player = Class{
         self.regen_timer = 0
         -- utilities
         self.direction = 'left'
+        self.dash_cooldown = 5
+        self.dash_timer = 0
     end;
-    move = function (self, direction)
-        self.is_moving = true
+    move = function (self, direction, amount)
+        if not amount or amount <= 0 then
+            return
+        end
+            self.is_moving = true
         if direction == "up" then
-            self.y = self.y - self.speed
+            self.y = self.y - amount
         elseif direction == "down" then
-            self.y = self.y + self.speed
+            self.y = self.y + amount
         elseif direction == "left" then
-            self.x = self.x - self.speed
+            self.x = self.x - amount
         elseif direction == "right" then
-            self.x = self.x + self.speed
+            self.x = self.x + amount
+        else
+            self.is_moving = false
+        end
     end
-end
 }
 return Player
